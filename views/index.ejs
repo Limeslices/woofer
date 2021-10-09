@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woofer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/8cae5614c8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="block">
+            <h1 class="has-text-centered is-size-4">Welcome to Woofer <%= name %>! </h1>
+        </div>
+        <div class="columns is-8">
+            <div class="column">
+                <div class="box">
+                    <form action="/barks" method="POST">
+                        <textarea name="bark" id="bark"  class="textarea has-fixed-size mb-5 is-primary" placeholder="What's happening?"></textarea>
+                        <button class="button has-background-primary has-text-white" type="submit">Bark!</button>
+                    </form>
+                </div>
+            </div>
+            <div class="column" id="barks">
+            </div>
+        </div>
+
+        <form action="/logout?_method=DELETE" method="POST">
+            <button type="submit" class="button has-background-primary has-text-white">Log Out</button>
+        </form>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
+
